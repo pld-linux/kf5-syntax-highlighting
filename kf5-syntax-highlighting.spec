@@ -1,16 +1,17 @@
-%define		kdeframever	5.53
+%define		kdeframever	5.56
 %define		qtver		5.9.0
 %define		kfname		syntax-highlighting
 
 Summary:	Syntax highlighting
 Name:		kf5-%{kfname}
-Version:	5.53.0
+Version:	5.56.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	62d67899a9cd5cd6b93761ebafd88942
+# Source0-md5:	9cb5b2eb63776bf69fa196f45fd53675
 URL:		http://www.kde.org/
+BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -40,16 +41,14 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 %build
 install -d build
 cd build
-%cmake \
+%cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	../
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} -C build/ install \
-        DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang syntaxhighlighting5 --with-qm
 
