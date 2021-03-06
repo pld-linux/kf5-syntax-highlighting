@@ -1,15 +1,15 @@
-%define		kdeframever	5.67
+%define		kdeframever	5.79
 %define		qtver		5.9.0
 %define		kfname		syntax-highlighting
 
 Summary:	Syntax highlighting
 Name:		kf5-%{kfname}
-Version:	5.67.0
+Version:	5.79.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	91319edc9d27393df6812d60f1505b99
+# Source0-md5:	a9b5f4f4594cd25268e0757d6f40609d
 URL:		http://www.kde.org/
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -60,10 +60,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f syntaxhighlighting5.lang
 %defattr(644,root,root,755)
-%{_datadir}/qlogging-categories5/org_kde_ksyntaxhighlighting.categories
 %attr(755,root,root) %{_bindir}/kate-syntax-highlighter
 %attr(755,root,root) %ghost %{_libdir}/libKF5SyntaxHighlighting.so.5
 %attr(755,root,root) %{_libdir}/libKF5SyntaxHighlighting.so.5.*.*
+%{_datadir}/qlogging-categories5/ksyntaxhighlighting.categories
+%{_datadir}/qlogging-categories5/ksyntaxhighlighting.renamecategories
 
 %files devel
 %defattr(644,root,root,755)
