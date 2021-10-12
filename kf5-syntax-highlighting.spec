@@ -1,15 +1,15 @@
-%define		kdeframever	5.86
+%define		kdeframever	5.87
 %define		qtver		5.9.0
 %define		kfname		syntax-highlighting
 
 Summary:	Syntax highlighting
 Name:		kf5-%{kfname}
-Version:	5.86.0
+Version:	5.87.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	45fcf5ca2e8576c937342d9fa2f5c67e
+# Source0-md5:	9feecd18ed0a082f049d10dfb4bb54f9
 URL:		http://www.kde.org/
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
