@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.98
+%define		kdeframever	5.99
 %define		qtver		5.15.2
 %define		kfname		syntax-highlighting
 
 Summary:	Syntax highlighting
 Name:		kf5-%{kfname}
-Version:	5.98.0
+Version:	5.99.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	2688640a3cbf21329ff9b3ebcf479199
+# Source0-md5:	1892a2844198375019285a282b1881d7
 URL:		http://www.kde.org/
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
